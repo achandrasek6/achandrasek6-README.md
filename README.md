@@ -9,7 +9,7 @@
 I build reproducible genomics pipelines and explainable models (Nextflow, Docker, AWS; Python/R).
 
 ## Featured Projects
-- **covid-mortality-prediction** — End-to-end SARS-CoV-2 pipeline: MAFFT → binary mutation features → Lasso (scikit-learn) + DNABERT; SHAP/LIME + robustness (label permutations, feature shuffles, ablations). Batch scoring via CLI/Nextflow.  
+- **Covid-Mortality-Prediction** — End-to-end SARS-CoV-2 pipeline: MAFFT → binary mutation features → Lasso (scikit-learn) + DNABERT; SHAP/LIME + robustness (label permutations, feature shuffles, ablations). Batch scoring via CLI/Nextflow.  
   _R² = 0.84 on held-out; ~5k → ~60 features via L1 sparsity._  
   🔗 https://github.com/achandrasek6/covid-mortality-prediction
 
