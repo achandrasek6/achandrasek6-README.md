@@ -19,10 +19,10 @@ I build reproducible genomics pipelines and explainable models (Nextflow, Docker
   🔗 https://github.com/achandrasek6/ESR1-Motif-Scanner
 
 ## Other Toolkits
-- **Local-Global-Alignment-Tools** (R) — Smith–Waterman (local) & Needleman–Wunsch (global) with edit-graph visualization.  
-  🔗 https://github.com/achandrasek6/Local-Global-Alignment-Tools
 - **Protein-Reciprocal-Hits** (Python) — Pairwise protein alignment (BLOSUM62) to find best reciprocal hits (human ↔ chicken) for putative orthologs.  
   🔗 https://github.com/achandrasek6/Protein-Reciprocal-Hits
+- **Local-Global-Alignment-Tools** (R) — Smith–Waterman (local) & Needleman–Wunsch (global) with edit-graph visualization.  
+  🔗 https://github.com/achandrasek6/Local-Global-Alignment-Tools
 - **Phylogenetic-Tree-Toolkit** (Python) — Build/query/visualize trees via UPGMA; quick plotting with Turtle graphics.  
   🔗 https://github.com/achandrasek6/Phylogenetic-Tree-Toolkit
 
