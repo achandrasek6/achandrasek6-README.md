@@ -1,43 +1,73 @@
-# ML engineer | bioinformatics & genetics
+# Aravind Chandrasekaran
+## Bioinformatics Engineer | Genomics/NGS + MLOps | Nextflow · AWS · Docker · Terraform · CI/CD
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/aravind-chandrasekaran-254793118)
 [![GitHub followers](https://img.shields.io/github/followers/achandrasek6?label=Follow&style=social)](https://github.com/achandrasek6)
-[![covid-mortality-prediction](https://img.shields.io/github/stars/achandrasek6/covid-mortality-prediction?label=covid-mortality-prediction&style=social)](https://github.com/achandrasek6/covid-mortality-prediction)
-[![Breast-Cancer-Predictor](https://img.shields.io/github/stars/achandrasek6/Breast-Cancer-Predictor?label=Breast-Cancer-Predictor&style=social)](https://github.com/achandrasek6/Breast-Cancer-Predictor)
-[![ESR1-Motif-Scanner](https://img.shields.io/github/stars/achandrasek6/ESR1-Motif-Scanner?label=ESR1-Motif-Scanner&style=social)](https://github.com/achandrasek6/ESR1-Motif-Scanner)
 
-I build reproducible genomics pipelines and explainable models (Nextflow, Docker, AWS; Python/R).
+I build cloud-native genomics systems and reproducible pipelines, with a focus on production-grade orchestration, explainable ML, and clear evidence artifacts.
 
-## Featured Projects
-- **Covid-Mortality-Prediction** — End-to-end SARS-CoV-2 pipeline: MAFFT → binary mutation features → Lasso (scikit-learn) + DNABERT; SHAP/LIME + robustness (label permutations, feature shuffles, ablations). Batch scoring via CLI/Nextflow.  
-  _R² = 0.84 on held-out; ~5k → ~60 features via L1 sparsity._  
-  🔗 https://github.com/achandrasek6/covid-mortality-prediction
+**Interested in:** Bioinformatics Engineer, Genomics ML Engineer, MLOps (omics-facing)
 
-- **Breast-Cancer-Predictor** — R-based preprocessing of single-cell breast tissue RNA-seq + Python Random Forest with leave-one-out CV to detect tumor presence.  
-  _Accuracy 0.889; ROC AUC 0.775._  
-  🔗 https://github.com/achandrasek6/Breast-Cancer-Predictor
+---
 
-- **ESR1-Motif-Scanner** — Python CLI that scans DNA for ESR1-binding motifs using PWM log-odds across 15-mer windows on both strands; CSV/bed-like outputs with thresholds.  
-  🔗 https://github.com/achandrasek6/ESR1-Motif-Scanner
+## ⭐ Featured Projects
 
-## Other Toolkits
-- **Local-Global-Alignment-Tools** (R) — Smith–Waterman (local) & Needleman–Wunsch (global) with edit-graph visualization.  
-  🔗 https://github.com/achandrasek6/Local-Global-Alignment-Tools
-- **Protein-Reciprocal-Hits** (Python) — BLOSUM62 pairwise alignment to find best reciprocal hits (human ↔ chicken) for putative orthologs.  
-  🔗 https://github.com/achandrasek6/Protein-Reciprocal-Hits
-- **Phylogenetic-Tree-Toolkit** (Python) — Build/query/visualize trees via UPGMA; quick plotting with Turtle graphics.  
-  🔗 https://github.com/achandrasek6/Phylogenetic-Tree-Toolkit
+### 1) SARS-CoV-2 CFR Prediction Platform (Genomes → Risk Scores)
+**Repo:** https://github.com/achandrasek6/Covid-Mortality-Prediction  
+**Live demo:** https://www.covid-cfr-predictor.com (API key on request)
 
-## Now / In Progress
-- CI/CD (GitHub Actions → Docker/ECR), MLflow/DVC versioning  
-- AWS Batch/ECS Fargate API (FastAPI + API Gateway), S3 pre-signed I/O, SQS  
-- Drift reports & monitoring for genomics models
 
-## Skills
-Python, R, scikit-learn, TensorFlow/Transformers, Biopython, tidyverse • Nextflow (DSL2), Docker, AWS Batch • MAFFT, SAMtools/BCFtools, VCFtools, BEDTools • SHAP/LIME, CV/metrics • NCBI/Ensembl/UCSC
+A two-service genomics platform:
+- **Async web UI (React/Vite)** for FASTA/multi-FASTA batch scoring + artifact downloads
+- **Low-latency FastAPI “calculator”** for mutation JSON “what-if” scoring with per-mutation delta contributions
 
-## Publications
-- _Genome-Driven Prediction of SARS-CoV-2 Case-Fatality Rate_, Wisconsin Online Collaboratives (In Press, Aug 2025)
+**Stack highlights:** Nextflow DSL2 on AWS Batch, Docker images in ECR, Terraform-managed infra, AWS control plane (API Gateway/Lambda, DynamoDB, EventBridge, S3 presigned outputs), CI/CD via GitHub Actions (OIDC → Buildx → ECR).  
 
-## Contact
-[LinkedIn](https://www.linkedin.com/in/aravind-chandrasekaran-254793118) • aravind_plano@yahoo.com
+**Modeling:** interpretable Lasso baseline with robustness controls + SHAP/LIME; DNABERT deep-learning GPU baseline (lower RMSE; integration underway).
+
+---
+
+### 2) Microbial WGS Assembly & QC (ISO1–ISO3, Wastewater Isolates)
+**Repo:** https://github.com/achandrasek6/Microbial-Genome-Assembly-QC
+
+End-to-end microbial assembly + QC workflow for three wastewater isolates (ISO1–ISO3), with preserved evidence artifacts (reports/logs) for reproducible review:
+- **FastQC/MultiQC → Trimmomatic → SPAdes → QUAST → BUSCO** (Flavobacteriia lineage set)
+- Contiguity (**Nx/N50/L50**), GC distribution, completeness summaries, and outlier interpretation
+
+---
+
+### 3) Breast Cancer Tumor Detection (scRNA-seq → ML Classifier)
+**Repo:** https://github.com/achandrasek6/Breast-Cancer-Predictor
+
+Breast cancer tumor detection from breast tissue scRNA-seq gene expression using an R/Python hybrid pipeline: preprocessing in **R (tidyverse)** and modeling in **Python (scikit-learn)** with a **Random Forest** classifier evaluated via **LOOCV**.
+
+---
+
+## 🧰 Additional Toolkits
+- **ESR1-Motif-Scanner** — PWM log-odds motif scanning CLI (15-mers, both strands)  
+  https://github.com/achandrasek6/ESR1-Motif-Scanner
+- **Enzyme-Variant-Profiler** — multiple sequence alignments + residue usage profiling across species  
+  https://github.com/achandrasek6/Enzyme-Variant-Profiler
+- **Protein-Reciprocal-Hits** — best reciprocal hits for putative orthology (BLOSUM62)  
+  https://github.com/achandrasek6/Protein-Reciprocal-Hits
+
+---
+
+## 🧠 Skills (high level)
+**Languages:** Python, R, Bash  
+**Genomics/NGS:** FASTA/FASTQ, SAM/BAM/CRAM, VCF/BCF; MAFFT; BLAST; SAMtools/BCFtools; BEDTools; tabix/bgzip  
+**Transcriptomics:** RNA-seq (STAR, DESeq2; Galaxy workflows), scRNA-seq  
+**Microbial assembly/QC:** FastQC/MultiQC; Trimmomatic; SPAdes; QUAST; BUSCO  
+**ML/MLOps:** scikit-learn, TensorFlow, Hugging Face; SHAP/LIME; CV + metrics  
+**Platform:** Nextflow DSL2; Docker; Terraform; AWS (Batch, ECS/Fargate, API Gateway, Lambda, S3, DynamoDB, EventBridge, CloudWatch, ECR); GitHub Actions CI/CD (OIDC/Buildx)
+
+---
+
+## 📚 Publications
+- *Genome-Driven Prediction of SARS-CoV-2 Case-Fatality Rate* — Wisconsin Online Collaboratives (Aug 2025)
+
+---
+
+## 📫 Contact
+- LinkedIn: https://www.linkedin.com/in/aravind-chandrasekaran-254793118
+- Email: aravind_plano@yahoo.com
