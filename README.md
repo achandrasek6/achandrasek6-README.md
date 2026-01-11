@@ -70,4 +70,4 @@ Breast cancer tumor detection from breast tissue scRNA-seq gene expression using
 
 ## 📫 Contact
 - LinkedIn: https://www.linkedin.com/in/aravind-chandrasekaran-254793118
-- Email: aravind_plano@yahoo.com
+- Email: achandrasek6@gmail.com
